@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакти — Портфоліо фотографа</title>
+
+  <!-- Шрифти -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- Іконки Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fffaf5;
+      color: #4b3621;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      background-color: #f4e9e1;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #7b4b2a;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-link:hover {
+      background-color: #c8a88e;
+      color: #fff;
+    }
+
+    .nav-link.active {
+      background-color: #7b4b2a;
+      color: #fff;
+      cursor: default;
+    }
+
+    header.page-header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #f9ede7, #f4d9c8);
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 2rem;
+    }
+
+    header.page-header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+      color: #4b3621;
+    }
+
+    main.contact-info {
+      max-width: 800px;
+      margin: 0 auto 4rem auto;
+      padding: 0 1rem;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: center;
+
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    main.contact-info p {
+      margin: 1.5rem 0;
+    }
+
+    main.contact-info a {
+      color: #7b4b2a;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    main.contact-info a:hover {
+      color: #4b3621;
+    }
+
+    .contact-icon {
+      margin-right: 10px;
+      color: #a27045;
+    }
+
+    footer {
+      background-color: #f4e9e1;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      color: #6f4f3a;
+      border-top: 1px solid #e0cfc0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="nav-link">Головна</a>
+    <a href="services.html" class="nav-link">Послуги</a>
+    <a href="contacts.html" class="nav-link active">Контакти</a>
+    <a href="booking.html" class="nav-link">Запис</a>
+  </nav>
+
+  <header class="page-header">
+    <h1>Контакти</h1>
+    <p class="subtitle">Зв’яжіться зі мною зручним способом</p>
+  </header>
+
+  <main class="contact-info">
+    <p><i class="fas fa-envelope contact-icon"></i> <a href="mailto:anastasiakusik05@gmail.com">anastasiakusik05@gmail.com</a></p>
+    <p><i class="fas fa-phone contact-icon"></i> <a href="tel:+380966886612">+380966886612</a></p>
+    <p><i class="fab fa-instagram contact-icon"></i> <a href="https://www.instagram.com/nastyonka_ph" target="_blank">@nastyonka_ph</a></p>
+  </main>
+
+  <footer>
+    <p>© 2025 Моє Портфоліо. Усі права захищено.</p>
+  </footer>
+</body>
+</html>

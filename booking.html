@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Запис на зйомку — Портфоліо фотографа</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay">
+      <h1 class="title">Запис на фотосесію</h1>
+      <nav class="menu">
+        <a href="index.html">Головна</a>
+        <a href="services.html">Послуги</a>
+        <a href="contacts.html">Контакти</a>
+        <a href="booking.html" class="active">Запис</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 600px; margin: 2rem auto; padding: 1rem;">
+    <form id="booking-form" action="https://formspree.io/f/xrbkqypd" method="POST">
+      <label>Ім’я:<br>
+        <input type="text" name="name" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+      </label><br>
+
+      <label>Email:<br>
+        <input type="email" name="email" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+      </label><br>
+
+      <label>Дата зйомки:<br>
+        <input type="date" name="date" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+      </label><br>
+
+      <label>Тип зйомки:<br>
+        <select name="type" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+          <option value="персональна">Персональна</option>
+          <option value="парна">Парна</option>
+          <option value="сімейна">Сімейна</option>
+          <option value="хрещення">Хрещення</option>
+          <option value="дитяча">Дитяча</option>
+          <option value="професійна">Професійна</option>
+          <option value="події">Святкові події</option>
+        </select>
+      </label><br>
+
+      <label>Коментар:<br>
+        <textarea name="message" rows="4" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"></textarea>
+      </label><br>
+
+      <button type="submit" style="padding: 0.7rem 1.5rem; background-color: #d4a5a5; color: white; border: none; border-radius: 5px; cursor: pointer;">Відправити</button>
+    </form>
+
+    <div id="thank-you" style="display: none; text-align: center; margin-top: 2rem; color: #5a4a42; font-weight: bold; font-size: 1.2rem;">
+      Дякуємо! Ми зв'яжемося з вами.
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Моє Портфоліо. Усі права захищено.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('booking-form');
+    const thankYou = document.getElementById('thank-you');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        thankYou.style.display = 'block';
+      } else {
+        alert("Помилка при надсиланні. Спробуйте ще раз.");
+      }
+    });
+  </script>
+</body>
+</html>

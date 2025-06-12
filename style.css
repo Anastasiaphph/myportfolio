@@ -1,0 +1,334 @@
+/* Загальні стилі сторінки */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #faf6f3;
+    color: #5a4a42;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+/* Хедер з банером */
+.hero {
+    position: relative;
+    height: 400px;
+    background: url('banner-photo.jpg') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    background-color: rgba(250, 246, 243, 0.7);
+    width: 100%;
+    height: 100%;
+    color: #5a4a42;
+    text-align: center;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.8rem;
+    margin: 0;
+    text-shadow: 0 1px 3px rgba(90, 74, 66, 0.5);
+}
+
+/* Меню */
+.menu {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    background-color: #faf6f3;
+    padding: 1.2rem 1rem;
+}
+
+.menu a {
+    color: #5a4a42;
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #b07b6b;
+    color: #fff;
+}
+
+.menu a.active {
+    background-color: #7f4f3b;
+    color: #fff;
+}
+
+/* Категорії */
+.categories {
+    padding: 3rem 1rem 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #a97d6b;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-items: center;
+}
+
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.category {
+    position: relative;
+    height: 180px;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(169, 125, 107, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    background-color: #fff9f6;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #5a4a42;
+    width: 100%;
+    max-width: 280px;
+}
+
+.category-label {
+    background-color: rgba(90, 74, 66, 0.6);
+    color: #faf6f3;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+}
+
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(169, 125, 107, 0.6);
+}
+
+.category:hover .category-label {
+    background-color: rgba(127, 79, 59, 0.85);
+    color: #fff;
+}
+
+/* Sticky Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    background-color: #f8f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #a86e6e;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #d7b7b7;
+    color: #fff;
+}
+
+.nav-link.active {
+    background-color: #a86e6e;
+    color: #fff;
+}
+
+/* Контейнер */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Форма */
+form {
+    background-color: #fffaf7;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(90, 74, 66, 0.15);
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+form.visible {
+    opacity: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #5a4a42;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    border: 2px solid #a97d6b;
+    border-radius: 6px;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #5a4a42;
+    background-color: #fffaf7;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #7f4f3b;
+    outline: none;
+}
+
+button, input[type="submit"] {
+    background-color: #7f4f3b;
+    color: #faf6f3;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 1.6rem;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #b07b6b;
+}
+
+/* Контактна інформація */
+.contact-info {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.contact-info.visible {
+    opacity: 1;
+}
+
+.contact-info a {
+    color: #7f4f3b;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Іконки */
+.contact-info i {
+    color: #a97d6b;
+}
+
+/* Футер */
+footer {
+    background-color: #a97d6b;
+    color: #faf6f3;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: inset 0 2px 6px rgba(90, 74, 66, 0.4);
+    margin-top: 3rem;
+}
+
+/* Адаптивність */
+@media (max-width: 600px) {
+    .hero {
+        height: 280px;
+    }
+
+    .title {
+        font-size: 2.6rem;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .category {
+        height: 140px;
+    }
+
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-item img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0.6rem;
+    }
+}
+
+/* Анімації */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Контактна сторінка */
+.contacts-page {
+    background-color: #faf6f3;
+    color: #5a4a42;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
